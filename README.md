@@ -96,3 +96,43 @@ Vary: Accept
 "email": "hotel5@gmail.com",
 "phone": "7821236789"
 }
+
+## "POST" a reservation information in browser:
+
+### Request:
+
+HTTP method: POST
+URL: http://127.0.0.1:8000/app/reservation/
+
+### Input the information in Content and Media Type is "application/json":
+
+{
+"hotel_name": "Hotel Amano",
+"checkin": "2024-04-11",
+"checkout": "2024-04-11",
+"guests_list": [
+{
+"name": "John Doe1",
+"gender": "Male",
+"phoneNumber": "1234567890",
+"email": "john@example.com"
+},
+{
+"name": "Jane Doe1",
+"gender": "Female",
+"phoneNumber": "9876543210",
+"email": "jane@example.com"
+}
+]
+}
+
+### Response:
+
+HTTP 201 Created
+Allow: OPTIONS, POST
+Content-Type: application/json
+Vary: Accept
+
+{
+"confirmation_number": 17
+}
